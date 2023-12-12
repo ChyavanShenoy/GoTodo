@@ -21,8 +21,10 @@ func AddTodoToDB(data models.Todo) error {
 	defer stmt.Close()
 
 	// Execute the statement with the passed data
-	_, err = stmt.Exec(data.Title, data.Description, data.Completed, data.CreatedAt, data.UpdatedAt)
-	if err != nil {
+	_, err = stmt.Exec(data.Title,
+		//  data.Description, data.Completed, data.CreatedAt, data.UpdatedAt)
+	)
+		if err != nil {
 		return err
 	}
 
